@@ -16,14 +16,20 @@ export const bookServiceFactory = (token) => {
         return result;
     };
 
-    const create = async (bookData) => {
+    const createBook = async (bookData) => {
         const result = await request.post(baseUrl, bookData);
         return result;
     };
 
+    const editBook = (bookId, data) => request.put(`${baseUrl}/${bookId}`, data);
+
+    const deleteBook = (bookId) => request.delete(`${baseUrl}/${bookId}`);
+
     return {
         getAll,
         getOne,
-        create,
+        createBook,
+        editBook,
+        delete: deleteBook,
     };
 };

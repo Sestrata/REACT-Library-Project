@@ -1,22 +1,37 @@
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-import { useForm } from '../../hooks/useForm';
+import { useForm } from "../../hooks/useForm";
+import { useService } from "../../hooks/useService";
+import { bookServiceFactory } from "../../services/bookService";
 
-export const CreateBook = ({
-    onCreateBookSubmit,
+
+export const EditBook = ({
+    onBookEditSubmit,
 }) => {
-    const { values, changeHandler, onSubmit } = useForm({
+    const { bookId } = useParams();
+    const bookService = useService(bookServiceFactory);
+    const { values, changeHandler, onSubmit, changeValues } = useForm({
+        _id: '',
         bookName: '',
         author: '',
         ganre: '',
         img: '',
         description: '',
-    }, onCreateBookSubmit);
+    }, onBookEditSubmit);
+
+    useEffect(() => {
+        bookService.getOne(bookId)
+            .then(result => {
+                changeValues(result);
+            });
+    }, [bookId, bookService, changeValues]); //[]
 
     return (
-        <section className="createBook" >
-            <form id="create" method="post" onSubmit={onSubmit}>
+        <section className="editBook">
+            <form id="edit" method="post" onSubmit={onSubmit}>
                 <div className="container">
-                    <h1>Create Book</h1>
+                    <h1>Edit Book</h1>
                     <div>
                         <label htmlFor="bookName">Book name:</label>
                         <input
@@ -70,8 +85,7 @@ export const CreateBook = ({
                             onChange={changeHandler}
                             type="img"
                             id="img"
-                            name="img"
-                        />
+                            name="img" />
                     </div>
                     <div>
                         <label htmlFor="description">Description:</label>
@@ -84,7 +98,7 @@ export const CreateBook = ({
                         </textarea>
                     </div>
                     <div className="submitBtn">
-                        <input type="submit" value="Create book" />
+                        <input type="submit" value="Edit book" />
                     </div>
                 </div>
             </form>

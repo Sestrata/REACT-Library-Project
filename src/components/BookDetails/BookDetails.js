@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
 import { bookServiceFactory } from "../../services/bookService";
@@ -6,6 +6,7 @@ import { useService } from "../../hooks/useService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const BookDetails = () => {
+    const navigate = useNavigate();
     const { userId } = useContext(AuthContext);
     const { bookId } = useParams();
     const [book, setBook] = useState({});
@@ -16,9 +17,14 @@ export const BookDetails = () => {
             .then(result => {
                 setBook(result);
             });
-    }, [bookId, bookService]); //, [bookId]
+    }, [bookId, bookService]); //[]
 
-    const isOwner = book._id === userId;
+    const isOwner = book._ownerId === userId;
+
+    const onDeleteClick = async () => {
+        await bookService.delete(book._id);
+        navigate('/catalog');
+    };
 
     return (
         <section className="detailBook">
@@ -32,10 +38,10 @@ export const BookDetails = () => {
 
                     {isOwner && (
                         <div className="btnEditDel">
-                            <button type="submit" className="editBtn" >EDIT</button>
-                            <button type="submit" className="deleteBtn" > DELETE</button>
+                            <Link to={`/catalog/${book._id}/edit`} className="editBtn" >EDIT</Link>
+                            <Link to='' className="deleteBtn" onClick={onDeleteClick} > DELETE</Link>
                         </div>
-                     )}
+                    )}
                 </section>
             </div >
         </section >
