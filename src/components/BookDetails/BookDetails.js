@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState, } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import { bookServiceFactory } from "../../services/bookService";
 import { useService } from "../../hooks/useService";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const BookDetails = () => {
+    const { userId } = useContext(AuthContext);
     const { bookId } = useParams();
     const [book, setBook] = useState({});
     const bookService = useService(bookServiceFactory);
@@ -16,6 +18,7 @@ export const BookDetails = () => {
             });
     }, [bookId, bookService]); //, [bookId]
 
+    const isOwner = book._id === userId;
 
     return (
         <section className="detailBook">
@@ -26,8 +29,13 @@ export const BookDetails = () => {
                     <h2>{book.author}</h2>
                     <h3>{book.ganre}</h3>
                     <p>{book.description}</p>
-                    <button type="submit" className="editBtn" >EDIT</button>
-                    <button type="submit" className="deleteBtn" > DELETE</button>
+
+                    {isOwner && (
+                        <div className="btnEditDel">
+                            <button type="submit" className="editBtn" >EDIT</button>
+                            <button type="submit" className="deleteBtn" > DELETE</button>
+                        </div>
+                     )}
                 </section>
             </div >
         </section >

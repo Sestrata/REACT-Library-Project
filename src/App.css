@@ -89,7 +89,7 @@ main {
 }
 
 .homePage ul>li:hover,
-.catalogPage ul>li:hover  {
+.catalogPage ul>li:hover {
   transform: scale(1.02);
 }
 
@@ -282,7 +282,7 @@ main {
   cursor: pointer;
   color: white;
   transform: scale(1.05);
-} 
+}
 
 
 /* Create */
@@ -301,7 +301,7 @@ main {
 }
 
 .createBook .container>div {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .createBook .container>div>label {
@@ -344,31 +344,36 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px auto;
 }
 
 .detailBook div {
-  width: 30%;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 95%;
   border-radius: 6px;
-  margin: 10px;
+  align-self: center;
   background-color: white;
-  overflow: hidden;
   text-align: center;
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .detailBook div>img {
   border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  width: 100%;
-  height: 50%;
+  border-bottom-left-radius: 6px;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .detailBook div>section {
-  width: 100%;
-  height: 20%;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding: 8px;
+  object-fit: cover;
 }
 
 .detailBook div section>h3 {
@@ -376,17 +381,21 @@ main {
 }
 
 .detailBook div section>p {
-  margin-bottom: 30px;
   text-indent: 30px;
   text-align: justify;
-  padding: 0px 10px;
+  padding: 5px;
 }
 
-.detailBook div section .editBtn,
-.detailBook div section .deleteBtn {
-  display: inline-block;
+.detailBook div section .btnEditDel {
+  box-shadow: none;
+  justify-content: space-around;
+  position: relative;
+  gap: 4px
+}
+
+.detailBook div section .btnEditDel .editBtn,
+.detailBook div section .btnEditDel .deleteBtn {
   padding: 10px;
-  margin: 1vw;
   background-color: rgb(89, 158, 147);
   border: none;
   border-radius: 6px;
@@ -396,18 +405,29 @@ main {
   letter-spacing: 0.5px;
   font-size: small;
   font-weight: bold;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 30px;
 }
 
-.detailBook div section .editBtn:hover,
-.detailBook div section .deleteBtn:hover {
+.detailBook div section .btnEditDel .editBtn {
+  left: 30px;
+}
+
+.detailBook div section .btnEditDel .deleteBtn {
+  right: 30px;
+}
+
+.detailBook div section .btnEditDel .editBtn:hover,
+.detailBook div section .btnEditDel .deleteBtn:hover {
   cursor: pointer;
   color: white;
 }
 
 /* All forms */
-.container div {
+/* .container div {
   margin-bottom: 10px;
-}
+} */
 
 /* Footer */
 footer {
