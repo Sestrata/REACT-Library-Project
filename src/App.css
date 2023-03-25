@@ -96,7 +96,7 @@ main {
 .homePage ul li>section,
 .catalogPage ul li>section {
   text-align: center;
-  height: 16%;
+  height: 20%;
   padding: 5px;
   overflow: hidden;
 }
@@ -162,12 +162,17 @@ main {
 
 
 /* Catalog */
+.catalogPage .search-container {
+  margin: 50px auto;
+}
+
 .catalogPage ul {
   padding: 0px 40px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
+
 .catalogPage .search-container {
   width: 50%;
   text-align: center;
@@ -449,10 +454,6 @@ main {
   transform: scale(1.05);
 }
 
-/* All forms */
-/* .container div {
-  margin-bottom: 10px;
-} */
 
 /* Footer */
 footer {
@@ -462,4 +463,54 @@ footer {
 
 footer p b {
   text-shadow: 2px 6px 10px rgb(89, 158, 147);
+}
+
+/* Search  */
+.search-container input {
+  width: 90%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.search-container .searchInputs button {
+  height: 40px;
+  width: 50px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: none;
+  background-color: white;
+  place-items: center;
+  cursor: pointer;
+}
+
+.search-container .dataResult {
+  width: 450px;
+  height: 100px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 6px;
+  margin-top: 6px;
+  text-align: start;
+}
+
+.search-container .dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.search-container .dataResult .dataItem {
+  text-decoration: none;
+  color: rgb(85, 87, 85);
+}
+
+.search-container .dataResult .dataItem:hover {
+  color: rgb(89, 158, 147);
+  text-shadow: 4px 4px 12px rgb(85, 87, 85);
 }
