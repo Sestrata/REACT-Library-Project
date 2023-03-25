@@ -34,7 +34,7 @@ function App() {
             .then(result => {
                 setBooks(result)
             })
-    }, [bookService]); //, []
+    }, []); //, []
 
     const onCreateBookSubmit = async (data) => {
         const newBook = await bookService.createBook(data);
@@ -75,7 +75,7 @@ function App() {
 
     const onBookEditSubmit = async (values) => {
         const result = await bookService.editBook(values._id, values);
-        setBooks(state => [...state, result]);
+        setBooks(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalog/${values._id}`);
     };
 

@@ -25,7 +25,7 @@ export const EditBook = ({
             .then(result => {
                 changeValues(result);
             });
-    }, [bookId, bookService, changeValues]); //[]
+    }, []); //[]
 
     return (
         <section className="editBook">

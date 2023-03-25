@@ -17,7 +17,7 @@ export const BookDetails = () => {
             .then(result => {
                 setBook(result);
             });
-    }, [bookId, bookService]); //[]
+    }, []); //[]
 
     const isOwner = book._ownerId === userId;
 
