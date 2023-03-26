@@ -55,7 +55,7 @@ function App() {
     const onRegisterSubmit = async (values) => {
         const { rePassword, ...registerData } = values;
         if (rePassword !== registerData.password) {
-            return; //
+            return;
         }
 
         try {
@@ -102,7 +102,7 @@ function App() {
                         <Route path="/register" element={<Register />}></Route>
                         <Route path="/createBook" element={<CreateBook onCreateBookSubmit={onCreateBookSubmit} />}></Route>
                         <Route path="/catalog" element={<Catalog books={books} />}></Route>
-                        <Route path="/ganre" element={<Ganre />}></Route>
+                        <Route path="/ganre" element={<Ganre books={books} />}></Route >
                         <Route path="/catalog/:bookId" element={<BookDetails />} />
                         <Route path="/catalog/:bookId/edit" element={<EditBook onBookEditSubmit={onBookEditSubmit} />} />
                         <Route path='*' element={<Error />} />

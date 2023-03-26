@@ -6,11 +6,13 @@ export const Catalog = ({
 }) => {
     return (
         <section className="catalogPage">
-            <Search placeholder="Search..." data={books}/>
+            <Search placeholder="Search..." data={books} />
             <h1>All books</h1>
-            <ul>
+
+            <section className="flex-container flex">
                 {books.map(x => <CatalogItem key={x._id} {...x} />)}
-            </ul>
+            </section>
+            
             {books.length === 0 && (<h3 className="no-books">No books yet</h3>)}
         </section>
     )
