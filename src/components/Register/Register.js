@@ -29,6 +29,7 @@ export const Register = () => {
                             placeholder="elena@abv.bg"
                         />
                     </div>
+                    {/* <p></p> */}
                     <div>
                         <label htmlFor="username">Username:</label>
                         <input
@@ -40,6 +41,7 @@ export const Register = () => {
                             placeholder="Elena"
                         />
                     </div>
+                    {/* <p></p> */}
                     <div>
                         <label htmlFor="registerPassword">Password:</label>
                         <input
@@ -50,10 +52,11 @@ export const Register = () => {
                             onChange={changeHandler}
                         />
                     </div>
+                    {/* <p></p> */}
                     <div>
                         <label htmlFor="registerPassword">Repassword:</label>
                         <input
-                            type="rePassword"
+                            type="password"
                             id="rePassword"
                             name="rePassword"
                             value={values.rePassword}

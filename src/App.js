@@ -34,7 +34,7 @@ function App() {
             .then(result => {
                 setBooks(result)
             })
-    }, []); //, []
+    }, [bookService]); //, []
 
     const onCreateBookSubmit = async (data) => {
         const newBook = await bookService.createBook(data);
@@ -68,8 +68,7 @@ function App() {
     };
 
     const onLogout = async () => {
-        // todo authoriz
-        // await authService.logout();
+        await authService.logout();
         setAuth({});
     };
 
@@ -85,6 +84,7 @@ function App() {
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
+        username: auth.username,
         userEmail: auth.email,
         isAuthenticated: !!auth.accessToken,  //t->f->t; f->t->f
     };

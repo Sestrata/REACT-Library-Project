@@ -6,6 +6,7 @@ import { useService } from "../../hooks/useService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const BookDetails = () => {
+    // const { username } = useContext(AuthContext);
     const navigate = useNavigate();
     const { userId } = useContext(AuthContext);
     const { bookId } = useParams();
@@ -17,7 +18,7 @@ export const BookDetails = () => {
             .then(result => {
                 setBook(result);
             });
-    }, []); //[]
+    }, [bookId, bookService]); //[]
 
     const isOwner = book._ownerId === userId;
 
@@ -42,6 +43,7 @@ export const BookDetails = () => {
                             <Link to='' className="deleteBtn" onClick={onDeleteClick} > DELETE</Link>
                         </div>
                     )}
+                    {/* <p>creator: {username}</p> */}
                 </section>
             </div >
         </section >

@@ -27,7 +27,7 @@ export const Login = () => {
                             placeholder="elena@abv.bg"
                         />
                     </div>
-
+                    {/* <p>Can't be empty</p> */}
                     <div>
                         <label htmlFor="loginPassword">Password:</label>
                         <input
@@ -38,6 +38,7 @@ export const Login = () => {
                             onChange={changeHandler}
                         />
                     </div>
+                    {/* <p></p> */}
                     <div className="submitBtn">
                         <input type="submit" value="Login" />
                     </div>

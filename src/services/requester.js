@@ -21,16 +21,20 @@ const request = async (method, token, url, data) => {
 
     const response = await fetch(url, options);
 
-    if (response.status === 204) {
-        return {};
-    }
+    // if (response.status === 204) {
+    //     return {};
+    // }
 
-    const result = await response.json();
+    // const result = await response.json();
 
-    if (!response.ok) {
-        throw result;
-    }
+    // if (!response.ok) {
+    //     throw result;
+    // }
 
+    // return result;
+
+    const string = await response.text();
+    const result = string === "" ? {} : JSON.parse(string)
     return result;
 };
 
