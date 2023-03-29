@@ -31,7 +31,7 @@ export const BookDetails = () => {
 
             dispatch({ type: 'BOOK_FETCH', payload: bookState })
         });
-    }, [bookId, bookService]); //[bookId]
+    }, [bookId]); //[bookId]
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(bookId, values.comment);

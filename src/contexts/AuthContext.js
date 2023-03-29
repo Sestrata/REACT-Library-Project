@@ -61,7 +61,9 @@ export const AuthProvider = ({  // is component
             </AuthContext.Provider>
         </>
     )
-}; export const useAuthContext = () => {
+};
+
+export const useAuthContext = () => {
     const context = useContext(AuthContext);
 
     return context;
