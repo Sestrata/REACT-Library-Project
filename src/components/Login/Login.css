@@ -15,8 +15,7 @@
   margin-bottom: 20px;
 }
 
-.login .container>div>label,
-.register .container>div>label {
+.login .container>div>label {
   margin-right: 10px;
 }
 

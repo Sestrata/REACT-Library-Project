@@ -1,4 +1,4 @@
-const request = async (method, token, url, data) => {
+const requester = async (method, url, data) => {
     const options = {};
 
     if (method !== 'GET') {
@@ -9,41 +9,47 @@ const request = async (method, token, url, data) => {
                 'content-type': 'application/json'
             };
             options.body = JSON.stringify(data);
-        }
+        };
     };
 
-    if (token) {
-        options.headers = {
-            ...options.headers,
-            'X-Authorization': token,
+    const serializeAuth = localStorage.getItem('auth');
+
+    if (serializeAuth) {
+        const auth = JSON.parse(serializeAuth);
+
+        if (auth.accessToken) {
+            options.headers = {
+                ...options.headers,
+                'X-Authorization': auth.accessToken,
+            };
         };
     };
 
     const response = await fetch(url, options);
 
-    // if (response.status === 204) {
-    //     return {};
-    // }
+    if (response.status === 204) {
+        return {};
+    };
 
-    // const result = await response.json();
+    const result = await response.json();
 
-    // if (!response.ok) {
-    //     throw result;
-    // }
+    if (!response.ok) {
+        throw result;
+    };
 
-    // return result;
-
-    const string = await response.text();
-    const result = string === "" ? {} : JSON.parse(string)
     return result;
+
+    // const string = await response.text();
+    // const result = string === "" ? {} : JSON.parse(string)
+    // return result;
 };
 
 
-export const requestFactory = (token) => {
+export const requestFactory = () => {
     return {
-        get: request.bind(null, 'GET', token),
-        post: request.bind(null, 'POST', token),
-        put: request.bind(null, 'PUT', token),
-        delete: request.bind(null, 'DELETE', token),
+        get: requester.bind(null, 'GET'),
+        post: requester.bind(null, 'POST'),
+        put: requester.bind(null, 'PUT'),
+        delete: requester.bind(null, 'DELETE'),
     }
 };

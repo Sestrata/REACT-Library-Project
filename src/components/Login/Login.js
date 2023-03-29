@@ -1,11 +1,11 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
 export const Login = () => {
-    const { onLoginSubmit } = useContext(AuthContext);
+    const { onLoginSubmit } = useAuthContext();
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: '',
@@ -27,7 +27,7 @@ export const Login = () => {
                             placeholder="elena@abv.bg"
                         />
                     </div>
-                    {/* <p>Can't be empty</p> */}
+                    {/* <p></p> */}
                     <div>
                         <label htmlFor="loginPassword">Password:</label>
                         <input

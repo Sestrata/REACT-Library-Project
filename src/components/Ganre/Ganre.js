@@ -2,11 +2,10 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { CatalogItem } from "../Catalog/CatalogItem/CatalogItem";
+import { useBookContext } from "../../contexts/BookContext";
 
-export const Ganre = ({
-    books,
-}) => {
-
+export const Ganre = () => {
+    const {books} = useBookContext();
     const [filteredData, setFilteredData] = useState([]);
     const filterResult = (ganreItem) => {
         const result = books.filter((currentData) => {

@@ -1,26 +1,22 @@
-.createBook,
-.editBook {
+.createBook {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0px auto;
 }
 
-.createBook .container h1,
-.editBook .container h1 {
+.createBook .container h1 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
   text-shadow: 2px 6px 10px rgb(89, 158, 147);
 }
 
-.createBook .container>div,
-.editBook .container>div {
+.createBook .container>div {
   margin-bottom: 10px;
 }
 
-.createBook .container>div>label,
-.editBook .container>div>label {
+.createBook .container>div>label {
   margin-right: 10px;
   font-weight: bold;
 }

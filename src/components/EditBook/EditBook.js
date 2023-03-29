@@ -4,11 +4,10 @@ import { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { bookServiceFactory } from "../../services/bookService";
+import { useBookContext } from "../../contexts/BookContext";
 
-
-export const EditBook = ({
-    onBookEditSubmit,
-}) => {
+export const EditBook = () => {
+    const {onBookEditSubmit} = useBookContext();
     const { bookId } = useParams();
     const bookService = useService(bookServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
@@ -25,7 +24,7 @@ export const EditBook = ({
             .then(result => {
                 changeValues(result);
             });
-    }, []); //[]
+    }, [bookId, bookService, changeValues]); //[]
 
     return (
         <section className="editBook">

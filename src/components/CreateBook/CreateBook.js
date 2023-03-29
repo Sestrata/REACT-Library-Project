@@ -1,9 +1,9 @@
 
+import { useBookContext } from '../../contexts/BookContext';
 import { useForm } from '../../hooks/useForm';
 
-export const CreateBook = ({
-    onCreateBookSubmit,
-}) => {
+export const CreateBook = () => {
+    const {onCreateBookSubmit} = useBookContext();
     const { values, changeHandler, onSubmit } = useForm({
         bookName: '',
         author: '',
@@ -12,6 +12,7 @@ export const CreateBook = ({
         description: '',
     }, onCreateBookSubmit);
 
+    //todo guard for unlog
     return (
         <section className="createBook" >
             <form id="create" method="post" onSubmit={onSubmit}>
