@@ -6,16 +6,16 @@ const requester = async (method, url, data) => {
 
         if (data) {
             options.headers = {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
             };
+
             options.body = JSON.stringify(data);
-        };
+        }
     };
 
-    const serializeAuth = localStorage.getItem('auth');
-
-    if (serializeAuth) {
-        const auth = JSON.parse(serializeAuth);
+    const serializedAuth = localStorage.getItem('auth');
+    if (serializedAuth) {
+        const auth = JSON.parse(serializedAuth);
 
         if (auth.accessToken) {
             options.headers = {
@@ -38,12 +38,7 @@ const requester = async (method, url, data) => {
     };
 
     return result;
-
-    // const string = await response.text();
-    // const result = string === "" ? {} : JSON.parse(string)
-    // return result;
 };
-
 
 export const requestFactory = () => {
     return {
@@ -53,3 +48,4 @@ export const requestFactory = () => {
         delete: requester.bind(null, 'DELETE'),
     }
 };
+

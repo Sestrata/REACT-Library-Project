@@ -7,7 +7,7 @@ import { bookServiceFactory } from "../../services/bookService";
 import { useBookContext } from "../../contexts/BookContext";
 
 export const EditBook = () => {
-    const {onBookEditSubmit} = useBookContext();
+    const { onBookEditSubmit } = useBookContext();
     const { bookId } = useParams();
     const bookService = useService(bookServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
@@ -24,7 +24,7 @@ export const EditBook = () => {
             .then(result => {
                 changeValues(result);
             });
-    }, []); //[]
+    }, [bookId]); //[bookId]
 
     return (
         <section className="editBook">

@@ -1,17 +1,16 @@
 import { createContext, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLocalStorage } from '../hooks/useLocalStorage';
 
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { authServiceFactory } from '../services/authService';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({  // is component
+export const AuthProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorage('auth', {});
-
     const authService = authServiceFactory(auth.accessToken);
 
     const onRegisterSubmit = async (values) => {
@@ -51,7 +50,8 @@ export const AuthProvider = ({  // is component
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken,  //t->f->t; f->t->f
+        username: auth.username,
+        isAuthenticated: !!auth.accessToken
     };
 
     return (
@@ -65,6 +65,5 @@ export const AuthProvider = ({  // is component
 
 export const useAuthContext = () => {
     const context = useContext(AuthContext);
-
     return context;
 };

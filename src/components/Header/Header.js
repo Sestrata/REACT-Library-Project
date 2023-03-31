@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
-    const { isAuthenticated, userEmail } = useAuthContext();
+    const { isAuthenticated, username } = useAuthContext();
 
     return (
         <header className="header">
@@ -23,7 +23,7 @@ export const Header = () => {
                     <div>
                         <Link to="/createBook">CREATE BOOK</Link>
                         <Link to="/logout">LOGOUT</Link>
-                        <span>{userEmail}</span>
+                        <span>{username}</span>
                     </div>
                 )}
 

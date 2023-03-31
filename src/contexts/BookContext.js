@@ -1,4 +1,3 @@
-
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
@@ -7,9 +6,8 @@ import { bookServiceFactory } from '../services/bookService';
 export const BookContext = createContext();
 
 export const BookProvider = ({
-    children
+    children,
 }) => {
-
     const navigate = useNavigate();
     const [books, setBooks] = useState([]);
     const bookService = bookServiceFactory();
@@ -27,24 +25,24 @@ export const BookProvider = ({
         navigate('/catalog');
     };
 
-    const onBookEditSubmit = async (values) => {
+    const onEditBookSubmit = async (values) => {
         const result = await bookService.editBook(values._id, values);
         setBooks(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalog/${values._id}`);
     };
 
-    const getBook = (bookId) => {
-        return books.find(book => book._id === bookId);
-    };
+        const getBook = (bookId) => {
+            return books.find(book => book._id === bookId);
+        };
 
-    const deleteBook = (bookId) => {
-        setBooks(state => state.filter(book => book._id !== bookId));
-    };
+        const deleteBook = (bookId) => {
+            setBooks(state => state.filter(book => book._id !== bookId));
+        };
 
     const contextValues = {
         books,
         onCreateBookSubmit,
-        onBookEditSubmit,
+        onEditBookSubmit,
         getBook,
         deleteBook
     };
@@ -59,4 +57,4 @@ export const BookProvider = ({
 export const useBookContext = () => {
     const context = useContext(BookContext);
     return context;
-}
+};

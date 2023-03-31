@@ -11,13 +11,9 @@ export const useLocalStorage = (key, initalValue) => {
     });
 
     const setLocalStorageState = (value) => {
-        setState(value);
-
+        setState(value); //if func=>ex to result
         localStorage.setItem(key, JSON.stringify(value));
     };
 
-    return [
-        state,
-        setLocalStorageState
-    ];
+    return [state, setLocalStorageState];
 };

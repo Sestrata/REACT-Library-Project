@@ -1,7 +1,7 @@
-import { requestFactory } from './requester';
+// import { requestFactory } from './requester';
+import {requestFactory} from './requester';
 
 const baseUrl = 'http://localhost:3030/data/comments';
-
 const request = requestFactory();
 
 export const getAll = async (bookId) => {
@@ -13,7 +13,7 @@ export const getAll = async (bookId) => {
     return comments;
 };
 
-export const create = async (bookId, comment) => {
-    const result = await request.post(baseUrl, { bookId, comment });
+export const createComment = async (bookId, comment) => {
+    const result = await request.post(baseUrl, { bookId, comment } );
     return result;
 };

@@ -13,7 +13,7 @@ export const BookOwner = ({
     const currentBook = getBook(bookId);
 
     if (currentBook && currentBook._ownerId !== userId) {
-        return <Navigate to={`/catalog/${bookId}`} replace />
+        return <Navigate to={`/catalog/${bookId}`} />
     };
 
     return children ? children : <Outlet />

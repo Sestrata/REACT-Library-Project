@@ -14,4 +14,4 @@ export const Home = () => {
             {books.length === 0 && (<h3 className="no-books">No books yet</h3>)}
         </section>
     )
-}
+};

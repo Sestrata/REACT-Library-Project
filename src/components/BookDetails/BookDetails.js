@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useEffect, useReducer } from "react";
+import { useEffect, useState } from "react";
 
 import { bookServiceFactory } from "../../services/bookService";
 import * as commentService from '../../services/commentService';
@@ -8,14 +8,12 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useBookContext } from "../../contexts/BookContext";
 
 import { AddComment } from "./AddComment/AddComent";
-import { bookReducer } from "../../reducers/bookReducer";
-
 
 export const BookDetails = () => {
-    const { userId, isAuthenticated, userEmail } = useAuthContext();
+    const { userId, isAuthenticated, username } = useAuthContext();
     const { bookId } = useParams();
     const { deleteBook } = useBookContext();
-    const [book, dispatch] = useReducer(bookReducer, {});
+    const [book, setBook] = useState({});
     const bookService = useService(bookServiceFactory);
     const navigate = useNavigate();
 
@@ -23,24 +21,33 @@ export const BookDetails = () => {
         Promise.all([
             bookService.getOne(bookId),
             commentService.getAll(bookId)
-        ]).then(([bookData, comments]) => {
-            const bookState = {
+        ]).then(([bookData, commentsData]) => {
+            setBook({
                 ...bookData,
-                comments,
-            };
-
-            dispatch({ type: 'BOOK_FETCH', payload: bookState })
+                commentsData
+            });
         });
     }, [bookId]); //[bookId]
 
     const onCommentSubmit = async (values) => {
-        const response = await commentService.create(bookId, values.comment);
+        const response = await commentService.createComment(bookId, values.comment);
+        // const result = await bookService.addComment(bookId, {
+        //     username,
+        //     comments,
+        // });
 
-        dispatch({
-            type: 'COMMENT_ADD',
-            payload: response,
-            userEmail
-        });
+        setBook(state => ({
+            ...state,
+            comments: [
+                ...state.comments,
+                {
+                    ...response,
+                    author: { username }
+                }
+            ]
+        }));
+        // setUsername('');
+        // setComment('');
     };
 
     const isOwner = book._ownerId === userId;
@@ -61,13 +68,15 @@ export const BookDetails = () => {
                     <h3>{book.ganre}</h3>
                     <p>{book.description}</p>
 
+                    {/* <p>creator: {username}</p> */}
+
                     {isOwner && (
                         <div className="btnEditDel">
                             <Link to={`/catalog/${book._id}/edit`} className="editBtn" >EDIT</Link>
                             <Link to='' className="deleteBtn" onClick={onDeleteClick} > DELETE</Link>
                         </div>
                     )}
-                    {/* <p>creator: {}</p> */}
+
                 </section>
             </div >
 
@@ -76,17 +85,18 @@ export const BookDetails = () => {
                     <h4>Comments:</h4>
                     {book.comments && book.comments.map(x => (
                         <div key={x._id}>
-                            <p>{x.author.email}: {x.comment}</p>
+                            <p>{x.author.username}{x.comment}</p>
                         </div>
                     ))}
                 </div>
 
-                {!book.comments?.length && (
+                {/* {!book.comments?.length && (
                     <p>No comments yet.</p>
-                )}
+                )} */}
             </div>
 
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
         </section >
     )
 }
+//

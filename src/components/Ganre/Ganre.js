@@ -1,11 +1,10 @@
-
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { CatalogItem } from "../Catalog/CatalogItem/CatalogItem";
 import { useBookContext } from "../../contexts/BookContext";
 
 export const Ganre = () => {
-    const {books} = useBookContext();
+    const { books } = useBookContext();
     const [filteredData, setFilteredData] = useState([]);
     const filterResult = (ganreItem) => {
         const result = books.filter((currentData) => {
@@ -36,7 +35,7 @@ export const Ganre = () => {
                 <li><Link a="#" onClick={() => filterResult('technology and science')}>TECHNOLOGY AND SCIENCE</Link></li>
                 <li><Link a="#" onClick={() => filterResult('thriller')}>THRILLER</Link></li>
             </ul>
-            
+
             <div className="ganreResult">
                 <section className="flex-container flex">
                     {filteredData.map(x => <CatalogItem key={x._id} {...x} />)}

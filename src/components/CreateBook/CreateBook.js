@@ -1,9 +1,8 @@
-
 import { useBookContext } from '../../contexts/BookContext';
 import { useForm } from '../../hooks/useForm';
 
 export const CreateBook = () => {
-    const {onCreateBookSubmit} = useBookContext();
+    const { onCreateBookSubmit } = useBookContext();
     const { values, changeHandler, onSubmit } = useForm({
         bookName: '',
         author: '',

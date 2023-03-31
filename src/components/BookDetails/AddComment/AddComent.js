@@ -1,12 +1,13 @@
 import { useForm } from "../../../hooks/useForm";
 
 export const AddComment = ({
-    onCommentSubmit,
+    onCommentSubmit
 }) => {
-    const {values, changeHandler, onSubmit} = useForm({
+    const { values, changeHandler, onSubmit } = useForm({
         comment: '',
     }, onCommentSubmit);
 
+     //todo guard for unlog
     return (
         <div className="addCommentContainer">
             <h4>Add new comment:</h4>
