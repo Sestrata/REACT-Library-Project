@@ -31,13 +31,13 @@ export const BookProvider = ({
         navigate(`/catalog/${values._id}`);
     };
 
-        const getBook = (bookId) => {
-            return books.find(book => book._id === bookId);
-        };
+    const getBook = (bookId) => {
+        return books.find(book => book._id === bookId);
+    };
 
-        const deleteBook = (bookId) => {
-            setBooks(state => state.filter(book => book._id !== bookId));
-        };
+    const deleteBook = (bookId) => {
+        setBooks(state => state.filter(book => book._id !== bookId));
+    };
 
     const contextValues = {
         books,

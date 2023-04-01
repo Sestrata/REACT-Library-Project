@@ -10,7 +10,7 @@ const requester = async (method, url, data) => {
             };
 
             options.body = JSON.stringify(data);
-        }
+        };
     };
 
     const serializedAuth = localStorage.getItem('auth');
