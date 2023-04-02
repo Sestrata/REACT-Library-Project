@@ -20,7 +20,7 @@ import { BookDetails } from './components/BookDetails/BookDetails';
 import { Logout } from './components/Logout/Logout';
 import { Error } from './components/Error/Error';
 import { EditBook } from './components/EditBook/EditBook';
-import { IsPublish } from './components/common/isPublic';
+import { IsPublish } from './components/common/isPublish';
 
 function App() {
     return (
