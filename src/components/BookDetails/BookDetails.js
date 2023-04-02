@@ -21,10 +21,10 @@ export const BookDetails = () => {
         Promise.all([
             bookService.getOne(bookId),
             commentService.getAll(bookId)
-        ]).then(([bookData, commentsData]) => {
+        ]).then(([bookData, comments]) => {
             setBook({
                 ...bookData,
-                commentsData
+                comments
             });
         });
     }, [bookId]); //[bookId]
@@ -85,7 +85,7 @@ export const BookDetails = () => {
                     <h4>Comments:</h4>
                     {book.comments && book.comments.map(x => (
                         <div key={x._id}>
-                            <p>{x.author.username}{x.comment}</p>
+                            <p>{x.author.username}: {x.comment}</p>
                         </div>
                     ))}
                 </div>

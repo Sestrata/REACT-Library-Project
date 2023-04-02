@@ -10,19 +10,20 @@ const requester = async (method, url, data) => {
             };
 
             options.body = JSON.stringify(data);
-        };
+        }
     };
 
     const serializedAuth = localStorage.getItem('auth');
+    
     if (serializedAuth) {
         const auth = JSON.parse(serializedAuth);
-
+        
         if (auth.accessToken) {
             options.headers = {
                 ...options.headers,
                 'X-Authorization': auth.accessToken,
             };
-        };
+        }
     };
 
     const response = await fetch(url, options);
@@ -48,4 +49,5 @@ export const requestFactory = () => {
         delete: requester.bind(null, 'DELETE'),
     }
 };
+
 

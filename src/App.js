@@ -39,13 +39,13 @@ function App() {
                             <Route path='*' element={<Error />} />
 
                             <Route element={<RouteGuard />}>
-                                <Route path='/logout' element={<Logout />} />
-                                <Route path='/createBook' element={<CreateBook />} />
                                 <Route path='/catalog/:bookId/edit' element={
                                     <BookOwner>
                                         <EditBook />
                                     </BookOwner>
                                 } />
+                                <Route path='/logout' element={<Logout />} />
+                                <Route path='/createBook' element={<CreateBook />} />
                             </Route>
 
                         </Routes>
