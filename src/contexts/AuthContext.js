@@ -41,6 +41,7 @@ export const AuthProvider = ({
     const onLogout = async () => {
         await authService.logout();
         setAuth({});
+        navigate('/');
     };
 
     const contextValue = {
@@ -51,7 +52,8 @@ export const AuthProvider = ({
         token: auth.accessToken,
         userEmail: auth.email,
         username: auth.username,
-        isAuthenticated: !!auth.accessToken
+        isAuthenticated: !!auth.accessToken,
+        isPublish: auth.accessToken
     };
 
     return (

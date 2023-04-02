@@ -20,6 +20,7 @@ import { BookDetails } from './components/BookDetails/BookDetails';
 import { Logout } from './components/Logout/Logout';
 import { Error } from './components/Error/Error';
 import { EditBook } from './components/EditBook/EditBook';
+import { IsPublish } from './components/common/isPublic';
 
 function App() {
     return (
@@ -31,8 +32,10 @@ function App() {
                     <main id="main-content">
                         <Routes>
                             <Route path='/' element={<Home />} />
-                            <Route path='/register' element={<Register />} />
-                            <Route path='/login' element={<Login />} />
+                            <Route element={<IsPublish />}>
+                                <Route path='/register' element={<Register />} />
+                                <Route path='/login' element={<Login />} />
+                            </Route>
                             <Route path="/ganre" element={<Ganre />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:bookId' element={<BookDetails />} />

@@ -5,24 +5,28 @@
 }
 
 .homePage .catalogPage {
-    padding: 0px 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-  
-  .homePage img {
-    width: 100%;
-  }
+  padding: 0px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
 
-.homePage h1,
-.catalogPage h1 {
+.homePage .welcome h1 {
+  font-size: xxx-large;
+  color: white;
+  text-shadow: 0px 2px 10px rgb(112, 116, 116);
+}
+
+.homePage section img {
+  width: 100%;
+}
+
+.homePage h1 {
   margin: 50px auto 30px auto;
   text-align: center;
 }
 
-.homePage .flex-container,
-.catalogPage .flex-container {
+.homePage .flex-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1vw;
@@ -90,7 +94,6 @@
   border-top-left-radius: 6px;
 }
 
-.homePage .no-books,
-.catalogPage .no-books {
+.homePage .no-books {
   text-align: center;
 }
