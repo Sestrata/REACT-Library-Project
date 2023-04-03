@@ -68,8 +68,6 @@ export const BookDetails = () => {
                     <h3>{book.ganre}</h3>
                     <p>{book.description}</p>
 
-                    {/* <p>creator: {username}</p> */}
-
                     {isOwner && (
                         <div className="btnEditDel">
                             <Link to={`/catalog/${book._id}/edit`} className="editBtn" >EDIT</Link>
@@ -90,9 +88,9 @@ export const BookDetails = () => {
                     ))}
                 </div>
 
-                {/* {!book.comments?.length && (
+                {!book.comments?.length && (
                     <p>No comments yet.</p>
-                )} */}
+                )}
             </div>
 
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}

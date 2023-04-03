@@ -60,7 +60,7 @@ export const CreateBook = () => {
                             <option value="romance">Romance</option>
                             <option value="satire">Satire</option>
                             <option value="sports">Sports</option>
-                            <option value="tehnology&science">Technology and Science</option>
+                            <option value="technologyscience">Technology & Science</option>
                             <option value="thriller">Thriller</option>
                         </select>
                     </div>

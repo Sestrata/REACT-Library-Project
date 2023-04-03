@@ -1,0 +1,28 @@
+.profile {
+    width: 50%;
+    margin: 30px auto;
+    padding: 16px;
+    font-size: 0.8rem;
+    margin-bottom: 1vw;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profile h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 6px 10px rgb(89, 158, 147);
+}
+
+.profile .profileContainer h2 {
+    margin-bottom: 14px;
+    font-weight: bold;
+    text-shadow: 2px 6px 10px rgb(89, 158, 147);
+}
+
+.profile .profileContainer h2 span {
+    font-style: italic;
+    font-weight: normal;
+    text-shadow: none;
+}

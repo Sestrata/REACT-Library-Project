@@ -39,9 +39,8 @@ export const AuthProvider = ({
     };
 
     const onLogout = async () => {
-        await authService.logout();
-        setAuth({});
-        navigate('/');
+            await authService.logout();
+            setAuth({});
     };
 
     const contextValue = {
@@ -53,7 +52,7 @@ export const AuthProvider = ({
         userEmail: auth.email,
         username: auth.username,
         isAuthenticated: !!auth.accessToken,
-        isPublish: auth.accessToken
+        isPublish: !!auth.accessToken
     };
 
     return (
@@ -62,7 +61,7 @@ export const AuthProvider = ({
                 {children}
             </AuthContext.Provider>
         </>
-    )
+    );
 };
 
 export const useAuthContext = () => {

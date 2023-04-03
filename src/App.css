@@ -10,6 +10,7 @@
 @import './components/BookDetails/BookDetails.css';
 @import './components/CreateBook/CreateBook.css';
 @import './components/EditBook/EditBook.css';
+@import './components/Profile/Profile.css';
 
 
 body {

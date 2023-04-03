@@ -26,8 +26,8 @@ export const Login = () => {
                             onChange={changeHandler}
                             placeholder="elena@abv.bg"
                         />
+                        {/* <p className="formError">Error</p> */}
                     </div>
-                    {/* <p></p> */}
                     <div>
                         <label htmlFor="loginPassword">Password:</label>
                         <input
@@ -37,8 +37,8 @@ export const Login = () => {
                             value={values.password}
                             onChange={changeHandler}
                         />
+                        {/* <p className="formError">Error</p> */}
                     </div>
-                    {/* <p></p> */}
                     <div className="submitBtn">
                         <input type="submit" value="Login" />
                     </div>
@@ -48,5 +48,5 @@ export const Login = () => {
                 </div>
             </form>
         </section>
-    )
-}
+    );
+};

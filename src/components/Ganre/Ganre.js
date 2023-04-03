@@ -32,7 +32,7 @@ export const Ganre = () => {
                 <li><Link a="#" onClick={() => filterResult('romance')}>ROMANCE</Link></li>
                 <li><Link a="#" onClick={() => filterResult('satire')}>SATIRE</Link></li>
                 <li><Link a="#" onClick={() => filterResult('sports')}>SPORTS</Link></li>
-                <li><Link a="#" onClick={() => filterResult('technology and science')}>TECHNOLOGY AND SCIENCE</Link></li>
+                <li><Link a="#" onClick={() => filterResult('technologyscience')}>TECHNOLOGY & SCIENCE</Link></li>
                 <li><Link a="#" onClick={() => filterResult('thriller')}>THRILLER</Link></li>
             </ul>
 

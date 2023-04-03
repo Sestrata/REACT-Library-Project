@@ -7,8 +7,9 @@ export const CatalogItem = ({
     ganre,
     img,
 }) => {
+
     return (
-        <div className="book flex-item">
+        <div className="book">
             <img src={img} alt="" />
             <section className="small-container">
                 <h3>{bookName}</h3>

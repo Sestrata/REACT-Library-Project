@@ -23,7 +23,7 @@ export const Header = () => {
                     <div>
                         <Link to="/createBook">CREATE BOOK</Link>
                         <Link to="/logout">LOGOUT</Link>
-                        <span>{username}</span>
+                        <Link to="/profile"><span>{username}'s PROFILE</span></Link>
                     </div>
                 )}
 

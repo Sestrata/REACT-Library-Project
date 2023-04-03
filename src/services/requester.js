@@ -10,27 +10,27 @@ const requester = async (method, url, data) => {
             };
 
             options.body = JSON.stringify(data);
-        }
+        };
     };
 
     const serializedAuth = localStorage.getItem('auth');
-    
+
     if (serializedAuth) {
         const auth = JSON.parse(serializedAuth);
-        
+
         if (auth.accessToken) {
             options.headers = {
                 ...options.headers,
                 'X-Authorization': auth.accessToken,
             };
-        }
+        };
     };
 
     const response = await fetch(url, options);
 
     if (response.status === 204) {
         return {};
-    };
+    }
 
     const result = await response.json();
 
@@ -47,7 +47,7 @@ export const requestFactory = () => {
         post: requester.bind(null, 'POST'),
         put: requester.bind(null, 'PUT'),
         delete: requester.bind(null, 'DELETE'),
-    }
+    };
 };
 
 

@@ -5,6 +5,7 @@ import './App.css';
 
 import { AuthProvider } from './contexts/AuthContext';
 import { RouteGuard } from './components/common/RouteGuard';
+import { IsPublish } from './components/common/IsPublish';
 import { BookProvider } from './contexts/BookContext';
 import { BookOwner } from './components/common/BookOwner';
 
@@ -20,7 +21,7 @@ import { BookDetails } from './components/BookDetails/BookDetails';
 import { Logout } from './components/Logout/Logout';
 import { Error } from './components/Error/Error';
 import { EditBook } from './components/EditBook/EditBook';
-import { IsPublish } from './components/common/isPublish';
+import { Profile } from './components/Profile/Profile';
 
 function App() {
     return (
@@ -49,6 +50,7 @@ function App() {
                                 } />
                                 <Route path='/logout' element={<Logout />} />
                                 <Route path='/createBook' element={<CreateBook />} />
+                                <Route path='/profile' element={<Profile />} />
                             </Route>
 
                         </Routes>
