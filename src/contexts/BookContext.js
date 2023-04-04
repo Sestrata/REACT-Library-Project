@@ -20,15 +20,23 @@ export const BookProvider = ({
     }, []); // []
 
     const onCreateBookSubmit = async (data) => {
-        const newBook = await bookService.createBook(data);
-        setBooks(state => [...state, newBook]);
-        navigate('/catalog');
+        try {
+            const newBook = await bookService.createBook(data);
+            setBooks(state => [...state, newBook]);
+            navigate('/catalog');
+        } catch (errors) {
+            throw (errors.message);
+        }
     };
 
     const onEditBookSubmit = async (values) => {
-        const result = await bookService.editBook(values._id, values);
-        setBooks(state => state.map(x => x._id === values._id ? result : x));
-        navigate(`/catalog/${values._id}`);
+        try {
+            const result = await bookService.editBook(values._id, values);
+            setBooks(state => state.map(x => x._id === values._id ? result : x));
+            navigate(`/catalog/${values._id}`);
+        } catch (errors) {
+            throw (errors.message);
+        }
     };
 
     const getBook = (bookId) => {

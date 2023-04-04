@@ -23,8 +23,8 @@ export const AuthProvider = ({
             const result = await authService.register(registerData);
             setAuth(result);
             navigate('/');
-        } catch (error) {
-            console.log('There is a problem');
+        } catch (errors) {
+            throw (errors.message);
         }
     };
 
@@ -33,14 +33,14 @@ export const AuthProvider = ({
             const result = await authService.login(data);
             setAuth(result);
             navigate('/');
-        } catch (error) {
-            console.log('There is a problem');
+        } catch (errors) {
+            throw (errors.message);
         }
     };
 
     const onLogout = async () => {
-            await authService.logout();
-            setAuth({});
+        await authService.logout();
+        setAuth({});
     };
 
     const contextValue = {

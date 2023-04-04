@@ -40,6 +40,10 @@
   }
   
   .header nav div span {
+    color: rgba(159, 189, 77, 0.996);
+  }
+
+  .header nav div span:hover {
     color: rgb(89, 158, 147);
   }
 

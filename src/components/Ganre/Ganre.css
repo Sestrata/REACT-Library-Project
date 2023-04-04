@@ -43,8 +43,6 @@
   color: white;
 }
 
-.ganreResult {}
-
 .ganrePage .no-books {
   text-align: center;
 }
@@ -85,12 +83,10 @@
   display: block;
 }
 
-.book .small-container p:nth-child(2),
 .book .small-container p:nth-child(2) {
   font-style: italic;
 }
 
-.book .small-container p:nth-child(3),
 .book .small-container p:nth-child(3) {
   font-weight: bold;
   text-transform: uppercase;
@@ -118,7 +114,6 @@
   border-top-left-radius: 6px;
 }
 
-.homePage .no-books,
-.catalogPage .no-books {
+.ganrePage .no-books {
   text-align: center;
 }

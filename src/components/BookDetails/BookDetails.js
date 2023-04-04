@@ -31,10 +31,6 @@ export const BookDetails = () => {
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.createComment(bookId, values.comment);
-        // const result = await bookService.addComment(bookId, {
-        //     username,
-        //     comments,
-        // });
 
         setBook(state => ({
             ...state,
@@ -46,8 +42,6 @@ export const BookDetails = () => {
                 }
             ]
         }));
-        // setUsername('');
-        // setComment('');
     };
 
     const isOwner = book._ownerId === userId;
@@ -95,6 +89,5 @@ export const BookDetails = () => {
 
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
         </section >
-    )
-}
-//
+    );
+};

@@ -18,5 +18,5 @@ export const CatalogItem = ({
                 <Link to={`/catalog/${_id}`} className="detailBtn">DETAILS</Link>
             </section>
         </div>
-    )
-}
+    );
+};

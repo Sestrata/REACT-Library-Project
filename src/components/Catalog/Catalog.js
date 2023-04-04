@@ -17,5 +17,5 @@ export const Catalog = () => {
 
             {books.length === 0 && (<h3 className="no-books">No books yet</h3>)}
         </section>
-    )
+    );
 };

@@ -49,11 +49,11 @@ export const Search = ({
                 <div className="dataResult">
                     {filteredData.slice(0, 10).map((value, i) => {
                         return <Link to={value._id} key={i} className="dataItem" target="_blank">
-                            <p>{value.bookName || value.author || value.ganre}</p>
+                            <p><i className="far fa-hand-point-right"></i> {value.bookName || value.author || value.ganre}</p>
                         </Link>
                     })}
                 </div>
             )}
         </div>
     );
-}
+};

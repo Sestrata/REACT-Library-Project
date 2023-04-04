@@ -2,11 +2,11 @@
 import { Link } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
-import { useAuthContext} from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export const Register = () => {
     const { onRegisterSubmit } = useAuthContext();
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmit, formErrors } = useForm({
         email: '',
         username: '',
         password: '',
@@ -15,7 +15,7 @@ export const Register = () => {
 
     return (
         <section className="register">
-            <form method="POST" onSubmit={onSubmit}>
+            <form method="POST" onSubmit={onSubmit} >
                 <div className="container">
                     <h1>Register</h1>
                     <div>
@@ -28,8 +28,8 @@ export const Register = () => {
                             onChange={changeHandler}
                             placeholder="elena@abv.bg"
                         />
+                        {formErrors.email && <p className="formError">{formErrors.email}</p>}
                     </div>
-                    {/* <p></p> */}
                     <div>
                         <label htmlFor="username">Username:</label>
                         <input
@@ -40,8 +40,8 @@ export const Register = () => {
                             onChange={changeHandler}
                             placeholder="Elena"
                         />
+                        {formErrors.username && <p className="formError">{formErrors.username}</p>}
                     </div>
-                    {/* <p></p> */}
                     <div>
                         <label htmlFor="registerPassword">Password:</label>
                         <input
@@ -51,8 +51,8 @@ export const Register = () => {
                             value={values.password}
                             onChange={changeHandler}
                         />
+                        {formErrors.password && <p className="formError">{formErrors.password}</p>}
                     </div>
-                    {/* <p></p> */}
                     <div>
                         <label htmlFor="registerPassword">Repassword:</label>
                         <input
@@ -62,6 +62,7 @@ export const Register = () => {
                             value={values.rePassword}
                             onChange={changeHandler}
                         />
+                        {formErrors.rePassword && <p className="formError">{formErrors.rePassword}</p>}
                     </div>
                     <div className="submitBtn">
                         <input type="submit" value="Register" />
@@ -72,5 +73,5 @@ export const Register = () => {
                 </div>
             </form>
         </section>
-    )
-}
+    );
+};

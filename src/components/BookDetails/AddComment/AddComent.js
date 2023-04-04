@@ -7,7 +7,6 @@ export const AddComment = ({
         comment: '',
     }, onCommentSubmit);
 
-     //todo guard for unlog
     return (
         <div className="addCommentContainer">
             <h4>Add new comment:</h4>
@@ -26,4 +25,4 @@ export const AddComment = ({
             </form>
         </div>
     );
-}
+};

@@ -51,3 +51,8 @@
   color: white;
   transform: scale(1.05);
 }
+
+.editBook .container .formError {
+  color: red;
+  font-size: small;
+}

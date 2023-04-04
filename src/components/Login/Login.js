@@ -6,7 +6,7 @@ import { useForm } from "../../hooks/useForm";
 
 export const Login = () => {
     const { onLoginSubmit } = useAuthContext();
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmit, formErrors } = useForm({
         email: '',
         password: '',
     }, onLoginSubmit);
@@ -26,7 +26,7 @@ export const Login = () => {
                             onChange={changeHandler}
                             placeholder="elena@abv.bg"
                         />
-                        {/* <p className="formError">Error</p> */}
+                        {formErrors.email && <p className="formError">{formErrors.email}</p>}
                     </div>
                     <div>
                         <label htmlFor="loginPassword">Password:</label>
@@ -37,7 +37,7 @@ export const Login = () => {
                             value={values.password}
                             onChange={changeHandler}
                         />
-                        {/* <p className="formError">Error</p> */}
+                       {formErrors.password && <p className="formError">{formErrors.password}</p>}
                     </div>
                     <div className="submitBtn">
                         <input type="submit" value="Login" />

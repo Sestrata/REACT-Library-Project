@@ -10,7 +10,7 @@ export const EditBook = () => {
     const { onEditBookSubmit } = useBookContext();
     const { bookId } = useParams();
     const bookService = useService(bookServiceFactory);
-    const { values, changeHandler, onSubmit, changeValues } = useForm({
+    const { values, changeHandler, onSubmit, changeValues, formErrors } = useForm({
         _id: '',
         bookName: '',
         author: '',
@@ -40,6 +40,7 @@ export const EditBook = () => {
                             id="bookName"
                             name="bookName"
                         />
+                        {formErrors.bookName && <p className="formError">{formErrors.bookName}</p>}
                     </div>
                     <div>
                         <label htmlFor="author">Author:</label>
@@ -50,6 +51,7 @@ export const EditBook = () => {
                             id="author"
                             name="author"
                         />
+                        {formErrors.author && <p className="formError">{formErrors.author}</p>}
                     </div>
                     <div>
                         <label htmlFor="ganre">Ganre:</label>
@@ -76,6 +78,7 @@ export const EditBook = () => {
                             <option value="tehnology&science">Technology & Science</option>
                             <option value="thriller">Thriller</option>
                         </select>
+                        {formErrors.ganre && <p className="formError">{formErrors.ganre}</p>}
                     </div>
                     <div>
                         <label htmlFor="img">Image:</label>
@@ -84,7 +87,9 @@ export const EditBook = () => {
                             onChange={changeHandler}
                             type="img"
                             id="img"
-                            name="img" />
+                            name="img"
+                        />
+                        {formErrors.img && <p className="formError">{formErrors.img}</p>}
                     </div>
                     <div>
                         <label htmlFor="description">Description:</label>
@@ -95,6 +100,7 @@ export const EditBook = () => {
                             id="description"
                             cols="30" rows="10">
                         </textarea>
+                        {formErrors.description && <p className="formError">{formErrors.description}</p>}
                     </div>
                     <div className="submitBtn">
                         <input type="submit" value="Edit book" />
@@ -102,5 +108,5 @@ export const EditBook = () => {
                 </div>
             </form>
         </section>
-    )
+    );
 };

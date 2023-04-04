@@ -50,3 +50,8 @@
   color: white;
   transform: scale(1.05);
 }
+
+.createBook .container .formError {
+  color: red;
+  font-size: small;
+}
