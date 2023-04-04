@@ -11,15 +11,16 @@ export const Profile = () => {
     return (
         <div className="profile">
             <h1>Profile</h1>
+            <img src="https://pic.onlinewebfonts.com/svg/img_550782.png" alt="" />
             <section className="profileContainer">
                 <h2>Userame: <span>{username}</span></h2>
                 <h2>Email: <span>{userEmail}</span></h2>
-                <h2>My books: 
+                <h2>My books:
                     <span>
-                    {names.map((x, i) => {
-                        return <p key={i}>{i + 1 + '. ' + x.bookName}
-                        </p>
-                    })}
+                        {names.map((x, i) => {
+                            return <p key={i}>{i + 1 + '. ' + x.bookName}
+                            </p>
+                        })}
                     </span>
                 </h2>
             </section>

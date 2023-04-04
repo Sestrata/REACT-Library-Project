@@ -77,7 +77,7 @@ export const BookDetails = () => {
                     <h4>Comments:</h4>
                     {book.comments && book.comments.map(x => (
                         <div key={x._id}>
-                            <p>{x.author.username}: {x.comment}</p>
+                            <p><i className="far fa-user"></i> <b>{x.author.username}</b>: {x.comment}</p>
                         </div>
                     ))}
                 </div>

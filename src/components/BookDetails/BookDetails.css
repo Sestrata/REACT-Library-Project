@@ -116,6 +116,10 @@
   padding: 4px 6px;
 }
 
+.allComments .comments>div>p>i {
+  color: rgb(89, 158, 147);
+}
+
 /* add comment */
 .addCommentContainer {
   padding: 8px;
