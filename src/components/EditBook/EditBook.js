@@ -69,6 +69,7 @@ export const EditBook = () => {
                             <option value="documentary">Documentary</option>
                             <option value="drama">Drama</option>
                             <option value="fantasy">Fantasy</option>
+                            <option value="for kids">For kids</option>
                             <option value="historical">Historical</option>
                             <option value="horror">Horror</option>
                             <option value="novella">Novella</option>

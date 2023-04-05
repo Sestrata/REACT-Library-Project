@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { useAuthContext } from '../../contexts/AuthContext';
-import { Time } from "../Time/Time";
+import { Time } from "./Time/Time";
 
 export const Header = () => {
     const { isAuthenticated, username } = useAuthContext();
@@ -10,7 +10,7 @@ export const Header = () => {
         <header className="header">
             <div className="logo" href="#">
                 <p>LIBRARY</p>
-                <Time />
+                <span><Time /></span>
             </div>
             <nav>
                 {/* all */}
@@ -24,6 +24,7 @@ export const Header = () => {
                 {isAuthenticated && (
                     <div>
                         <Link to="/createBook">CREATE BOOK</Link>
+                        <Link to="/forMe">ABOUT</Link>
                         <Link to="/logout">LOGOUT</Link>
                         <Link to="/profile"><span>{username}'s PROFILE</span></Link>
                     </div>

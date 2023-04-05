@@ -40,15 +40,15 @@ export const useForm = (initialValues, onSubmitHandler) => {
         };
 
 
-        if (e.target.name === "bookName" && (value.length < 2 || value.length > 200)) {
+        if (e.target.name === "bookName" && (value.length < 2 || value.length > 300)) {
             errors.bookName = 'Bookname should be between 2 and 50 characters long.';
         };
 
-        if (e.target.name === "author" && (value.length < 2 || value.length > 50)) {
+        if (e.target.name === "author" && (value.length < 2 || value.length > 100)) {
             errors.author = 'Author should be between 2 and 30 characters long.';
         };
 
-        if (e.target.name === "description" && (value.length < 5 || value.length > 500)) {
+        if (e.target.name === "description" && (value.length < 5 || value.length > 700)) {
             errors.description = 'Description should be between 5 and 300 characters long.';
         };
 

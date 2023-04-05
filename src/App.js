@@ -22,6 +22,7 @@ import { Logout } from './components/Logout/Logout';
 import { Error } from './components/Error/Error';
 import { EditBook } from './components/EditBook/EditBook';
 import { Profile } from './components/Profile/Profile';
+import { About } from './components/About/About';
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                             <Route path="/ganre" element={<Ganre />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:bookId' element={<BookDetails />} />
+                            <Route path='/forMe' element={<About />} />
                             <Route path='*' element={<Error />} />
 
                             <Route element={<RouteGuard />}>

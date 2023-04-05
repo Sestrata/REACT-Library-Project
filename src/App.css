@@ -11,6 +11,7 @@
 @import './components/CreateBook/CreateBook.css';
 @import './components/EditBook/EditBook.css';
 @import './components/Profile/Profile.css';
+@import './components/About/About.css';
 
 
 body {
