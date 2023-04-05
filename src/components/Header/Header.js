@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { useAuthContext } from '../../contexts/AuthContext';
 import { Time } from "./Time/Time";
@@ -15,26 +15,26 @@ export const Header = () => {
             <nav>
                 {/* all */}
                 <div>
-                    <Link to="/">HOME</Link>
-                    <Link to="/catalog">CATALOG</Link>
-                    <Link to="/ganre">GANRES</Link>
+                    <NavLink to="/">HOME</NavLink>
+                    <NavLink to="/catalog">CATALOG</NavLink>
+                    <NavLink to="/ganre">GANRES</NavLink>
                 </div>
 
                 {/* users */}
                 {isAuthenticated && (
                     <div>
-                        <Link to="/createBook">CREATE BOOK</Link>
-                        <Link to="/forMe">ABOUT</Link>
-                        <Link to="/logout">LOGOUT</Link>
-                        <Link to="/profile"><span>{username}'s PROFILE</span></Link>
+                        <NavLink to="/createBook">CREATE BOOK</NavLink>
+                        <NavLink to="/about">ABOUT</NavLink>
+                        <NavLink to="/logout">LOGOUT</NavLink>
+                        <NavLink to="/profile"><span>{username}'s PROFILE</span></NavLink>
                     </div>
                 )}
 
                 {/* guest */}
                 {!isAuthenticated && (
                     <div>
-                        <Link to="/login">LOGIN</Link>
-                        <Link to="/register">REGISTER</Link>
+                        <NavLink to="/login">LOGIN</NavLink>
+                        <NavLink to="/register">REGISTER</NavLink>
                     </div>
                 )}
             </nav>

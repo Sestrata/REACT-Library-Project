@@ -1,4 +1,4 @@
-import { TypeWriter } from '../TypeWriter/TypeWriter';
+import { TypeWriter } from '../commonAnimation/TypeWriter/TypeWriter';
 import { useBookContext } from "../../contexts/BookContext";
 
 export const About = () => {

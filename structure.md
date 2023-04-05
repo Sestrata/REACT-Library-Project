@@ -20,6 +20,9 @@ Library
              BookOwner.js
              IsPublish.js
              RouteGuard.js
+          commonAnimation
+             TypeWriter
+                TypeWriter.js
           CreateBook
              Create.js
           EditBook

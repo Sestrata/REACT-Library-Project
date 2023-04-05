@@ -41,7 +41,7 @@ function App() {
                             <Route path="/ganre" element={<Ganre />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:bookId' element={<BookDetails />} />
-                            <Route path='/forMe' element={<About />} />
+                            <Route path='/about' element={<About />} />
                             <Route path='*' element={<Error />} />
 
                             <Route element={<RouteGuard />}>
