@@ -1,6 +1,7 @@
 footer {
-    border-top: 2px solid rgb(0, 0, 0);
+  height: 5vh;
     text-align: center;
+    background-image: linear-gradient(rgb(89, 158, 147), white 95%);
   }
   
   footer p b {

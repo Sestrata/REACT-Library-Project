@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid rgb(0, 0, 0);
+  background-image: linear-gradient(white 80%, rgb(89, 158, 147));
 }
 
 .logo>p {

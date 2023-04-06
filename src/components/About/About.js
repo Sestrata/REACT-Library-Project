@@ -7,7 +7,7 @@ export const About = () => {
     return (
         <section className="about">
             <div className="typeWriter">
-                <TypeWriter text={'Hii, everyone! My name is Elena Yaneva. This is my first ReactJS project LIBRARY. Here you can find a wide variety of books. Below you can see information about total number of books which we have and by individual ganres. Enjoy reading!'} />
+                <TypeWriter text={'Hii, everyone! In LIBRARY you can find a wide variety of books. Below you can see information about total number of books which we have and by individual ganres. Enjoy reading!'} />
             </div>
             <div className="aboutCountBooks">
                 <div className="aboutAllBooks">

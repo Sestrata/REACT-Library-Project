@@ -34,7 +34,7 @@
 }
 
 .flex .book {
-  width: calc((100% - (2*1vw) - (1vw * 2)) / 5);
+  width: calc((100% - (2 * 1vw) - (1vw * 2)) / 5);
 }
 
 .homePage .catalogPage {
