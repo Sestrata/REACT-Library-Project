@@ -9,7 +9,7 @@ export const Time = () => {
 
     return (
         <div className="currentTime">
-            <p>{time.toLocaleTimeString()}</p>
+            <p>{time.toLocaleTimeString('en-IT', { hour12: false })}</p>
         </div>
     );
 };

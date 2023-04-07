@@ -39,9 +39,9 @@ function App() {
                                 <Route path='/login' element={<Login />} />
                             </Route>
                             <Route path="/ganre" element={<Ganre />} />
+                            <Route path='/about' element={<About />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:bookId' element={<BookDetails />} />
-                            <Route path='/about' element={<About />} />
                             <Route path='*' element={<Error />} />
 
                             <Route element={<RouteGuard />}>

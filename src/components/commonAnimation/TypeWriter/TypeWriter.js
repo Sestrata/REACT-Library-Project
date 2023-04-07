@@ -13,5 +13,13 @@ export const TypeWriter = ({ text }) => {
 
     return (
         <h1>{currentText}</h1>
+        
     );
 };
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@ import { useBookContext } from "../../contexts/BookContext";
 
 export const About = () => {
     const { books } = useBookContext();
+    const allBooks = books.length;
 
     return (
         <section className="about">
@@ -11,7 +12,7 @@ export const About = () => {
             </div>
             <div className="aboutCountBooks">
                 <div className="aboutAllBooks">
-                    <h1>ALL BOOKS: {books.length}</h1>
+                    <h1>ALL BOOKS: {allBooks}</h1>
                 </div>
 
                 <ul>
@@ -33,6 +34,7 @@ export const About = () => {
                     <li>TECHNOLOGY & SCIENCE: {books.filter((currentData) => currentData.ganre === 'technologyscience').length}</li>
                     <li>THRILLER: {books.filter((currentData) => currentData.ganre === 'thriller').length}</li>
                 </ul>
+
             </div>
         </section>
     );

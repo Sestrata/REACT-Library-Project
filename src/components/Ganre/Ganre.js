@@ -6,6 +6,7 @@ import { useBookContext } from "../../contexts/BookContext";
 export const Ganre = () => {
     const { books } = useBookContext();
     const [filteredData, setFilteredData] = useState([]);
+
     const filterResult = (ganreItem) => {
         const result = books.filter((currentData) => {
             return currentData.ganre.toLowerCase() === ganreItem.toLowerCase();
@@ -37,11 +38,11 @@ export const Ganre = () => {
             </ul>
 
             <div className="ganreResult">
+                {filteredData.length === 0 && filterResult && <h3 className="no-books">No books yet</h3>}
+
                 <section className="flex-container flex">
                     {filteredData.map(x => <CatalogItem key={x._id} {...x} />)}
                 </section>
-
-                {filteredData.length === 0 && (<h3 className="no-books">No books yet</h3>)}
             </div>
         </section>
     );

@@ -20,6 +20,5 @@ body {
 
 main {
   background-image: radial-gradient(white 80%, rgb(89, 158, 147));
-  /* height: 100vh; */
   display: flex;
 }

@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <header className="header">
             <div className="logo" href="#">
-                <p>LIBRARY</p>
+                <p><span><i className="fas fa-glasses"></i></span> LIBRARY</p>
                 <span><Time /></span>
             </div>
             <nav>
@@ -18,13 +18,13 @@ export const Header = () => {
                     <NavLink to="/">HOME</NavLink>
                     <NavLink to="/catalog">CATALOG</NavLink>
                     <NavLink to="/ganre">GANRES</NavLink>
+                    <NavLink to="/about">ABOUT</NavLink>
                 </div>
 
                 {/* users */}
                 {isAuthenticated && (
                     <div>
                         <NavLink to="/createBook">CREATE BOOK</NavLink>
-                        <NavLink to="/about">ABOUT</NavLink>
                         <NavLink to="/logout">LOGOUT</NavLink>
                         <NavLink to="/profile"><span>{username}'s PROFILE</span></NavLink>
                     </div>
