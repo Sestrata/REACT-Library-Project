@@ -10,7 +10,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
         bookName: '',
         author: '',
-        ganre: '',
+        genre: '',
         img: '',
         description: '',
     });

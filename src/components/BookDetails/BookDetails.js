@@ -27,7 +27,7 @@ export const BookDetails = () => {
                 comments
             });
         });
-    }, [bookId]); //[bookId]
+    }, [bookId]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.createComment(bookId, values.comment);
@@ -59,7 +59,7 @@ export const BookDetails = () => {
                 <section>
                     <h1>{book.bookName}</h1>
                     <h2>{book.author}</h2>
-                    <h3>{book.ganre}</h3>
+                    <h3>{book.genre}</h3>
                     <p>{book.description}</p>
 
                     {isOwner && (

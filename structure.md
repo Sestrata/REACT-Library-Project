@@ -18,7 +18,7 @@ Delete book for owner
 Search by only ganres
 Info for total number of books
 Info for total number by individual ganres
-Create book
+Create book for authenticate users
 Profile with info - username, email and list of own books
 Route - publish, authenticate users and owners
 

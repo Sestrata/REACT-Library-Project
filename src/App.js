@@ -17,7 +17,7 @@ import { Home } from './components/Home/Home';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { CreateBook } from './components/CreateBook/CreateBook';
-import { Ganre } from './components/Ganre/Ganre';
+import { Genre } from './components/Genre/Genre';
 import { Catalog } from './components/Catalog/Catalog';
 import { BookDetails } from './components/BookDetails/BookDetails';
 import { Logout } from './components/Logout/Logout';
@@ -41,7 +41,7 @@ function App() {
                                 <Route path='/register' element={<Register />} />
                                 <Route path='/login' element={<Login />} />
                             </Route>
-                            <Route path="/ganre" element={<Ganre />} />
+                            <Route path="/genre" element={<Genre />} />
                             <Route path='/about' element={<About />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:bookId' element={<BookDetails />} />

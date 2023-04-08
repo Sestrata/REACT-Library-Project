@@ -14,7 +14,7 @@ export const Search = ({
         const newFilter = data.filter((value) => {
             return value.bookName.toLowerCase().includes(searchWord.toLowerCase())
                 || value.author.toLowerCase().includes(searchWord.toLowerCase())
-                || value.ganre.toLowerCase().includes(searchWord.toLowerCase());
+                || value.genre.toLowerCase().includes(searchWord.toLowerCase());
         });
 
         if (searchWord === '') {
@@ -49,7 +49,7 @@ export const Search = ({
                 <div className="dataResult">
                     {filteredData.slice(0, 10).map((value, i) => {
                         return <Link to={value._id} key={i} className="dataItem" target="_blank">
-                            <p><i className="far fa-hand-point-right"></i> <b>{value.bookName}</b> from <b>{value.author}</b>, <em>{value.ganre}</em></p>
+                            <p><i className="far fa-hand-point-right"></i> <b>{value.bookName}</b> from <b>{value.author}</b>, <em>{value.genre}</em></p>
                         </Link>
                     })}
                 </div>

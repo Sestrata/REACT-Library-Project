@@ -5,7 +5,7 @@ export const CatalogItem = ({
     _id,
     bookName,
     author,
-    ganre,
+    genre,
     img,
 }) => {
 
@@ -15,7 +15,7 @@ export const CatalogItem = ({
             <section className="small-container">
                 <h3>{bookName}</h3>
                 <p>{author}</p>
-                <p>{ganre}</p>
+                <p>{genre}</p>
                 <div className="btn">
                     <Link to={`/catalog/${_id}`} className="detailBtn">DETAILS</Link>
                 </div>

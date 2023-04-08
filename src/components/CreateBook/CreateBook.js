@@ -6,7 +6,7 @@ export const CreateBook = () => {
     const { values, changeHandler, onSubmit, formErrors } = useForm({
         bookName: '',
         author: '',
-        ganre: '',
+        genre: '',
         img: '',
         description: '',
     }, onCreateBookSubmit);
@@ -15,7 +15,7 @@ export const CreateBook = () => {
         <section className="createBook" >
             <form id="create" method="POST" onSubmit={onSubmit}>
                 <div className="container">
-                    <h1>Create Book</h1>
+                    <h1>Create book</h1>
                     <div>
                         <label htmlFor="bookName">Book name:</label>
                         <input
@@ -41,11 +41,11 @@ export const CreateBook = () => {
                         {formErrors.author && <p className="formError">{formErrors.author}</p>}
                     </div>
                     <div>
-                        <label htmlFor="ganre">Ganre:</label>
+                        <label htmlFor="genre">Genre:</label>
                         <select
-                            name="ganre"
-                            id="ganre"
-                            value={values.ganre}
+                            name="genre"
+                            id="genre"
+                            value={values.genre}
                             onChange={changeHandler}
                             required
                         >
@@ -68,7 +68,7 @@ export const CreateBook = () => {
                             <option value="technologyscience">Technology & Science</option>
                             <option value="thriller">Thriller</option>
                         </select>
-                        {formErrors.ganre && <p className="formError">{formErrors.ganre}</p>}
+                        {formErrors.genre && <p className="formError">{formErrors.genre}</p>}
                     </div>
                     <div>
                         <label htmlFor="img">Image:</label>

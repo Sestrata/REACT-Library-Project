@@ -3,20 +3,20 @@ import { useState } from 'react';
 import { CatalogItem } from "../Catalog/CatalogItem/CatalogItem";
 import { useBookContext } from "../../contexts/BookContext";
 
-export const Ganre = () => {
+export const Genre = () => {
     const { books } = useBookContext();
     const [filteredData, setFilteredData] = useState([]);
 
-    const filterResult = (ganreItem) => {
+    const filterResult = (genreItem) => {
         const result = books.filter((currentData) => {
-            return currentData.ganre.toLowerCase() === ganreItem.toLowerCase();
+            return currentData.genre.toLowerCase() === genreItem.toLowerCase();
         });
         setFilteredData(result);
     }
 
     return (
-        <section className="ganrePage">
-            <h1>Ganres</h1>
+        <section className="genrePage">
+            <h1>Genres</h1>
             <ul>
                 <li><Link a="#" onClick={() => filterResult('adventure')} >ADVENTURE</Link></li>
                 <li><Link a="#" onClick={() => filterResult('biography')}>BIOGRAPHY</Link></li>
@@ -37,7 +37,7 @@ export const Ganre = () => {
                 <li><Link a="#" onClick={() => filterResult('thriller')}>THRILLER</Link></li>
             </ul>
 
-            <div className="ganreResult">
+            <div className="genreResult">
                 {filteredData.length === 0 && filterResult && <h3 className="no-books">No books yet</h3>}
 
                 <section className="flex-container flex">

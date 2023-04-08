@@ -1,4 +1,4 @@
-.ganrePage {
+.genrePage {
   display: flex;
   flex-direction: column;
   padding: 0px 40px;
@@ -6,13 +6,13 @@
   height: auto;
 }
 
-.ganrePage h1 {
+.genrePage h1 {
   text-align: center;
   margin-top: 20px;
   text-shadow: 2px 6px 10px rgb(89, 158, 147);
 }
 
-.ganrePage ul {
+.genrePage ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.2vw;
@@ -20,7 +20,7 @@
   justify-content: space-evenly;
 }
 
-.ganrePage ul li {
+.genrePage ul li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -32,26 +32,26 @@
   transition: 150ms ease-in-out;
 }
 
-.ganrePage ul li:hover {
+.genrePage ul li:hover {
   transform: scale(1.05);
 }
 
-.ganrePage ul li a {
+.genrePage ul li a {
   padding: 1vw 3vw;
   text-decoration: none;
   color: black;
 }
 
-.ganrePage ul li a:hover {
+.genrePage ul li a:hover {
   color: white;
 }
 
-.ganrePage .no-books {
+.genrePage .no-books {
   text-align: center;
 }
 
 /* result */
-.ganrePage .ganreResult .flex-container {
+.genrePage .genreResult .flex-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1vw;
@@ -117,6 +117,6 @@
   border-top-left-radius: 6px;
 }
 
-.ganrePage .no-books {
+.genrePage .no-books {
   text-align: center;
 }

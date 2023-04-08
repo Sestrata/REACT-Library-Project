@@ -19,7 +19,7 @@ export const Profile = () => {
                 <h2>Number of your books is {myBooks}:
                     <span>
                         {names.map((x, i) => {
-                            return <p key={i}>{i + 1 + '. ' + x.bookName + ' from ' + x.author + ', ' + x.ganre}
+                            return <p key={i}>{i + 1 + '. ' + x.bookName + ' from ' + x.author + ', ' + x.genre}
                             </p>
                         })}
                     </span>

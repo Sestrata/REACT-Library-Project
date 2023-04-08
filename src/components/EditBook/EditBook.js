@@ -14,7 +14,7 @@ export const EditBook = () => {
         _id: '',
         bookName: '',
         author: '',
-        ganre: '',
+        genre: '',
         img: '',
         description: '',
     }, onEditBookSubmit);
@@ -24,7 +24,7 @@ export const EditBook = () => {
             .then(result => {
                 changeValues(result);
             });
-    }, [bookId]); //[bookId]
+    }, [bookId]);
 
     return (
         <section className="editBook">
@@ -56,11 +56,11 @@ export const EditBook = () => {
                         {formErrors.author && <p className="formError">{formErrors.author}</p>}
                     </div>
                     <div>
-                        <label htmlFor="ganre">Ganre:</label>
+                        <label htmlFor="genre">Genre:</label>
                         <select
-                            name="ganre"
-                            id="ganre"
-                            value={values.ganre}
+                            name="genre"
+                            id="genre"
+                            value={values.genre}
                             onChange={changeHandler}
                             required
                         >
@@ -83,7 +83,7 @@ export const EditBook = () => {
                             <option value="tehnology&science">Technology & Science</option>
                             <option value="thriller">Thriller</option>
                         </select>
-                        {formErrors.ganre && <p className="formError">{formErrors.ganre}</p>}
+                        {formErrors.genre && <p className="formError">{formErrors.genre}</p>}
                     </div>
                     <div>
                         <label htmlFor="img">Image:</label>
