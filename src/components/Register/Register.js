@@ -27,6 +27,7 @@ export const Register = () => {
                             value={values.email}
                             onChange={changeHandler}
                             placeholder="elena@abv.bg"
+                            required
                         />
                         {formErrors.email && <p className="formError">{formErrors.email}</p>}
                     </div>
@@ -39,6 +40,7 @@ export const Register = () => {
                             value={values.username}
                             onChange={changeHandler}
                             placeholder="Elena"
+                            required
                         />
                         {formErrors.username && <p className="formError">{formErrors.username}</p>}
                     </div>
@@ -50,6 +52,7 @@ export const Register = () => {
                             name="password"
                             value={values.password}
                             onChange={changeHandler}
+                            required
                         />
                         {formErrors.password && <p className="formError">{formErrors.password}</p>}
                     </div>
@@ -61,6 +64,7 @@ export const Register = () => {
                             name="rePassword"
                             value={values.rePassword}
                             onChange={changeHandler}
+                            required
                         />
                         {formErrors.rePassword && <p className="formError">{formErrors.rePassword}</p>}
                     </div>

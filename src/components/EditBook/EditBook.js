@@ -39,6 +39,7 @@ export const EditBook = () => {
                             type="bookName"
                             id="bookName"
                             name="bookName"
+                            required
                         />
                         {formErrors.bookName && <p className="formError">{formErrors.bookName}</p>}
                     </div>
@@ -50,6 +51,7 @@ export const EditBook = () => {
                             type="author"
                             id="author"
                             name="author"
+                            required
                         />
                         {formErrors.author && <p className="formError">{formErrors.author}</p>}
                     </div>
@@ -59,7 +61,9 @@ export const EditBook = () => {
                             name="ganre"
                             id="ganre"
                             value={values.ganre}
-                            onChange={changeHandler}>
+                            onChange={changeHandler}
+                            required
+                        >
                             <option value="">---</option>
                             <option value="adventure">Adventure</option>
                             <option value="biography">Biography</option>
@@ -89,6 +93,7 @@ export const EditBook = () => {
                             type="img"
                             id="img"
                             name="img"
+                            required
                         />
                         {formErrors.img && <p className="formError">{formErrors.img}</p>}
                     </div>
@@ -99,7 +104,9 @@ export const EditBook = () => {
                             onChange={changeHandler}
                             name="description"
                             id="description"
-                            cols="30" rows="10">
+                            cols="30" rows="10"
+                            required
+                        >
                         </textarea>
                         {formErrors.description && <p className="formError">{formErrors.description}</p>}
                     </div>

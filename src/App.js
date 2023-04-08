@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './Reset.css';
 import './App.css';
@@ -29,6 +31,7 @@ function App() {
         <AuthProvider>
             <BookProvider>
                 <div id="box">
+                    <ToastContainer />
                     <Header />
 
                     <main id="main-content">

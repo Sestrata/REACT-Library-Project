@@ -17,11 +17,11 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const changeHandler = (e) => {
         const value = e.target.value;
-        const errors = {};
+        let errors = {};
 
         if (e.target.name === "email" && (value.length < 2 || value.length > 20)) {
             errors.email = 'Email should be between 2 and 20 characters long.';
-        };
+        }
 
         if (e.target.name === "username" && (value.length < 2 || value.length > 15)) {
             errors.username = 'Username should be between 2 and 15 characters long.';
@@ -35,6 +35,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         if (e.target.name === "email" && (value.length < 2 || value.length > 20)) {
             errors.email = 'Email should be between 2 and 20 characters long.';
         };
+
         if (e.target.name === "password" && (value.length < 5 || value.length > 15)) {
             errors.password = 'Password should be between 5 and 15 characters long.';
         };
@@ -58,6 +59,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+
         onSubmitHandler(values);
         setValues(initialValues);
     };

@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { bookServiceFactory } from '../services/bookService';
 
@@ -25,7 +26,7 @@ export const BookProvider = ({
             setBooks(state => [...state, newBook]);
             navigate('/catalog');
         } catch (errors) {
-            throw (errors.message);
+            toast.error('All fields are require');
         }
     };
 
@@ -35,7 +36,7 @@ export const BookProvider = ({
             setBooks(state => state.map(x => x._id === values._id ? result : x));
             navigate(`/catalog/${values._id}`);
         } catch (errors) {
-            throw (errors.message);
+            toast.error('All fields are require');
         }
     };
 

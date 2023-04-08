@@ -25,6 +25,7 @@ export const Login = () => {
                             value={values.email}
                             onChange={changeHandler}
                             placeholder="elena@abv.bg"
+                            required
                         />
                         {formErrors.email && <p className="formError">{formErrors.email}</p>}
                     </div>
@@ -36,6 +37,7 @@ export const Login = () => {
                             name="password"
                             value={values.password}
                             onChange={changeHandler}
+                            required
                         />
                        {formErrors.password && <p className="formError">{formErrors.password}</p>}
                     </div>

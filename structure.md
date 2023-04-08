@@ -1,67 +1,24 @@
-
-MyReactProject
-
 Library
 
+Used technologies and libraries:
+ReactJS
+HTML
+CSS
+React-toastify
+Font Awesome Icons
 
-   SRC
-       Components
-          About
-             About.js
-          BookDetails
-             BookDetails.js
-             AddComment
-                AddComent.js
-          Catalog
-             Catalog.js
-             CatalogItem
-                CatalogItem.js
-          common
-             BookOwner.js
-             IsPublish.js
-             RouteGuard.js
-          commonAnimation
-             TypeWriter
-                TypeWriter.js
-          CreateBook
-             Create.js
-          EditBook
-             EditBook.js
-          Error
-             Error.js
-          Footer
-             Footer.js
-          Ganre
-             Ganre.js
-          Header
-             Header.js
-             Time
-                Time.js
-          Home
-             Home.js
-          Login
-             Login.js
-          Logout
-             Logout.js
-          Profile
-             Profile.js
-          Register
-             Register.js
-          Search
-             Search.js
-       Contexts
-          AuthContext.js
-          BookContext.js
-       Hooks
-          useForm.js
-          useLocalStorage.js
-          useService.js
-       Services
-          authService.js
-          bookService.js
-          commentService.js
-          requester.js
-       App.js
-       index.js
+Functionality:
+Welcome by name
+Last three books
+Search by book name 
+Search by author
+Search by ganre
+Edit book for owner
+Delete book for owner
+Search by only ganres
+Info for total number of books
+Info for total number by individual ganres
+Create book
+Profile with info - username, email and list of own books
+Route - publish, authenticate users and owners
 
-Softuni-practice-server

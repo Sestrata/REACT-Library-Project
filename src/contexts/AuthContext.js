@@ -1,5 +1,6 @@
 import { createContext, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { authServiceFactory } from '../services/authService';
@@ -24,7 +25,7 @@ export const AuthProvider = ({
             setAuth(result);
             navigate('/');
         } catch (errors) {
-            throw (errors.message);
+            toast.error('All fields are require');
         }
     };
 
@@ -34,7 +35,7 @@ export const AuthProvider = ({
             setAuth(result);
             navigate('/');
         } catch (errors) {
-            throw (errors.message);
+            toast.error('All fields are require');
         }
     };
 

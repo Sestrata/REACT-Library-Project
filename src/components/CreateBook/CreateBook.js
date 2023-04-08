@@ -24,6 +24,7 @@ export const CreateBook = () => {
                             name="bookName"
                             value={values.bookName}
                             onChange={changeHandler}
+                            required
                         />
                         {formErrors.bookName && <p className="formError">{formErrors.bookName}</p>}
                     </div>
@@ -35,6 +36,7 @@ export const CreateBook = () => {
                             name="author"
                             value={values.author}
                             onChange={changeHandler}
+                            required
                         />
                         {formErrors.author && <p className="formError">{formErrors.author}</p>}
                     </div>
@@ -44,7 +46,9 @@ export const CreateBook = () => {
                             name="ganre"
                             id="ganre"
                             value={values.ganre}
-                            onChange={changeHandler}>
+                            onChange={changeHandler}
+                            required
+                        >
                             <option value="">---</option>
                             <option value="adventure">Adventure</option>
                             <option value="biography">Biography</option>
@@ -69,11 +73,12 @@ export const CreateBook = () => {
                     <div>
                         <label htmlFor="img">Image:</label>
                         <input
-                            value={values.img}
-                            onChange={changeHandler}
                             type="img"
                             id="img"
                             name="img"
+                            value={values.img}
+                            onChange={changeHandler}
+                            required
                         />
                         {formErrors.img && <p className="formError">{formErrors.img}</p>}
                     </div>
@@ -84,7 +89,9 @@ export const CreateBook = () => {
                             onChange={changeHandler}
                             name="description"
                             id="description"
-                            cols="30" rows="10">
+                            cols="30" rows="10"
+                            required
+                        >
                         </textarea>
                         {formErrors.description && <p className="formError">{formErrors.description}</p>}
                     </div>
