@@ -37,7 +37,7 @@
   width: calc((100% - (2 * 1vw) - (1vw * 2)) / 5);
 }
 
-.homePage .catalogPage {
+.homePage .lastThreeBooks {
   padding: 0px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

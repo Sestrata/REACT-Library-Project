@@ -17,7 +17,7 @@ export const Home = () => {
             </section>
 
             <h1>Last three books</h1>
-            <section className="catalogPage">
+            <section className="lastThreeBooks">
                 {books.map(x => <CatalogItem key={x._id} {...x} />).slice(-3)}
             </section>
             {books.length === 0 && (<h3 className="no-books">No books yet</h3>)}
